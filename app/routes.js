@@ -2,8 +2,9 @@ const express = require('express');
 
 const routes = express.Router();
 
-routes.get('/', (req, res) => {
-  res.send('Hello World');
-});
+const authController = require('./controllers/authController');
+
+routes.get('/', authController.signin);
+routes.get('/signup', authController.signup);
 
 module.exports = routes;

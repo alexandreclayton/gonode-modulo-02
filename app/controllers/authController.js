@@ -10,7 +10,7 @@ module.exports = {
     return res.render('auth/signup', { layout: 'layouts/auth' });
   },
 
-  async register(req, res) {
+  async register(req, res, next) {
     try {
       const { email } = req.body;
 
@@ -19,15 +19,14 @@ module.exports = {
         return res.redirect('/signup');
       }
 
-      const password = await bcrypt.hash(req.body.password, 5);
+      const password = await bcrypt.hadsh(req.body.password, 5);
 
       await User.create({ ...req.body, password });
 
       req.flash('success', 'Usuário cadastrado com sucesso');
       return res.redirect('/');
     } catch (err) {
-      console.log(err);
-      return res.send('/signup');
+      return next(err);
     }
   },
 };

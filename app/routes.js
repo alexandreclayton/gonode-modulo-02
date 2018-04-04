@@ -2,7 +2,11 @@ const express = require('express');
 
 const routes = express.Router();
 
+const authMiddleware = require('./middlewares/auth');
+const guestMiddleware = require('./middlewares/guest');
+
 const authController = require('./controllers/authController');
+const dashboardController = require('./controllers/dashboardController');
 
 // set locals
 routes.use((req, res, next) => {
@@ -15,20 +19,27 @@ routes.use((req, res, next) => {
 /**
  * Auth
  */
-routes.get('/', authController.signin);
-routes.get('/signup', authController.signup);
+routes.get('/', guestMiddleware, authController.signin);
+routes.get('/signup', guestMiddleware, authController.signup);
+routes.get('/signout', authController.logout);
+
 routes.post('/register', authController.register);
-// routes.post('/authenticate', authController.authenticate);
+routes.post('/authenticate', authController.authenticate);
+
+/**
+ * Dashboard
+ */
+routes.use('/app', authMiddleware);
+routes.get('/app/dashboard', dashboardController.index);
 
 // catch 404
-routes.use((req, res) => {
-  res.render('errors/404');
-});
+routes.use((req, res) => res.render('errors/404'));
 
 // error handler
 routes.use((err, req, res, _next) => {
   res.status(err.status || 500);
-  res.render('errors/index', {
+
+  return res.render('errors/index', {
     message: err.message,
     error: req.app.get('env') === 'development' ? err : {},
   });

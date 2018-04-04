@@ -7,6 +7,7 @@ const path = require('path');
 const session = require('express-session');
 const flash = require('connect-flash');
 const hbs = require('hbs');
+const sessionConfig = require('./config/session');
 
 const app = express();
 
@@ -16,14 +17,7 @@ app.set('view engine', 'hbs');
 
 hbs.registerPartials(path.join(__dirname, 'app', 'views', 'partials'));
 
-app.use(session({
-  secret: process.env.SECRET_TOKEN,
-  resave: false,
-  saveUninitialized: true,
-  cookie: {
-    secure: app.get('env') === 'production',
-  },
-}));
+app.use(session(sessionConfig));
 app.use(flash());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));

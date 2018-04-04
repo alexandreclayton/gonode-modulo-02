@@ -1,8 +1,8 @@
-<form class="form-signin">
+<form method="POST" action="/authenticate" class="form-signin">
   <h1 class="mb-4">Fazer login</h1>
 
-  <input type="email" class="form-control" placeholder="Digite seu e-mail" required autofocus>
-  <input type="password" class="form-control" placeholder="Sua senha secreta" required>
+  <input name="email" type="email" class="form-control" placeholder="Digite seu e-mail" required="required" autofocus="autofocus">
+  <input name="password" type="password" class="form-control" placeholder="Sua senha secreta" required="required">
   <button class="btn btn-lg btn-primary btn-block" type="submit">Entrar</button>
 
   <p class="mt-3">

@@ -1,11 +1,12 @@
 <%- contentFor('body') %>
 
-<form class="form-signin">
+<form method="POST" action="/register" class="form-signin">
   <h1 class="mb-4">Criar conta</h1>
 
-  <input type="text" class="form-control" placeholder="Digite seu nome" required autofocus>
-  <input type="email" class="form-control" placeholder="Digite seu e-mail" required>
-  <input type="password" class="form-control" placeholder="Sua senha secreta" required>
+  <input type="text" name="name" class="form-control" placeholder="Digite seu nome" required autofocus>
+  <input type="email" name="email" class="form-control" placeholder="Digite seu e-mail" required>
+  <input type="password" name="password" class="form-control" placeholder="Sua senha secreta" required>
+
   <button class="btn btn-lg btn-primary btn-block" type="submit">Criar conta grátis</button>
 
   <p class="mt-3">

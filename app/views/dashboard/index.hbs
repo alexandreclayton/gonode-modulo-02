@@ -1,2 +1,120 @@
-<h1>Dashboard</h1>
-<a href="/signout">Sair</a>
+<nav id="main">
+  <div class="header">
+    <strong>Minha biblioteca</strong>
+    <a href="/signout">Sair</a>
+  </div>
+
+  <div class="categories">
+    <strong>CATEGORIAS</strong>
+
+    <ul>
+      <li class="active">
+        <a href="/app/categories/show/1">
+          NodeJS
+          <span>3</span>
+        </a>
+      </li>
+      <li>
+        <a href="/app/categories/show/2">
+          ReactJS
+          <span>10</span>
+        </a>
+      </li>
+    </ul>
+
+    <a href="">NOVA CATEGORIA</a>
+  </div>
+</nav>
+
+<section class="snippets-list">
+  <div class="list-header">
+    <a href="/app/snippets/new" class="new">NOVO SNIPPET</a>
+  </div>
+  <a href="/app/snippets/show/1">
+    <strong>Utilização do promisify para callbacks</strong>
+    <p>Quando precisar trocar um callback para Promise basta utilizar o Promisify do útil seguindo os comandos abaixo.</p>
+  </a>
+  <a href="/app/snippets/show/1" class="active">
+    <strong>Utilização do promisify para callbacks</strong>
+    <p>Quando precisar trocar um callback para Promise basta utilizar o Promisify do útil seguindo os comandos abaixo.</p>
+  </a>
+  <a href="/app/snippets/show/1">
+    <strong>Utilização do promisify para callbacks</strong>
+    <p>Quando precisar trocar um callback para Promise basta utilizar o Promisify do útil seguindo os comandos abaixo.</p>
+  </a>
+  <a href="/app/snippets/show/1">
+    <strong>Utilização do promisify para callbacks</strong>
+    <p>Quando precisar trocar um callback para Promise basta utilizar o Promisify do útil seguindo os comandos abaixo.</p>
+  </a>
+  <a href="/app/snippets/show/1">
+    <strong>Utilização do promisify para callbacks</strong>
+    <p>Quando precisar trocar um callback para Promise basta utilizar o Promisify do útil seguindo os comandos abaixo.</p>
+  </a>
+  <a href="/app/snippets/show/1">
+    <strong>Utilização do promisify para callbacks</strong>
+    <p>Quando precisar trocar um callback para Promise basta utilizar o Promisify do útil seguindo os comandos abaixo.</p>
+  </a>
+  <a href="/app/snippets/show/1">
+    <strong>Utilização do promisify para callbacks</strong>
+    <p>Quando precisar trocar um callback para Promise basta utilizar o Promisify do útil seguindo os comandos abaixo.</p>
+  </a>
+  <a href="/app/snippets/show/1">
+    <strong>Utilização do promisify para callbacks</strong>
+    <p>Quando precisar trocar um callback para Promise basta utilizar o Promisify do útil seguindo os comandos abaixo.</p>
+  </a>
+</section>
+
+<section class="snippet-content">
+  <div class="actions">
+    <a href="/app/snippets/edit/1" class="edit">Editar</a>
+    <form action="/app/snippets/delete/1" method="post">
+      <button type="submit">Remover</button>
+    </form>
+  </div>
+
+  <h1>Async/await no controller do ExpressJS</h1>
+
+  <div class="content">
+    <p>Quando precisar trocar um callback para Promise basta utilizar o Promisify do útil seguindo os comandos abaixo.</p>
+    <pre>
+      <code class="js">const authController = require('./controllers/authController');
+const dashboardController = require('./controllers/dashboardController');
+
+// catch 404
+routes.use((req, res) => res.render('errors/404'));
+
+// error handler
+routes.use((err, req, res, _next) => {
+  res.status(err.status || 500);
+
+  return res.render('errors/index', {
+    message: err.message,
+    error: req.app.get('env') === 'development' ? err : {},
+  });
+});</code>
+    </pre>
+    <p>Quando precisar trocar um callback para Promise basta utilizar o Promisify do útil seguindo os comandos abaixo.</p>
+    <ul>
+      <li>Tesete</li>
+      <li>adasdasd</li>
+    </ul>
+    <p>Quando precisar trocar um callback para Promise basta utilizar o Promisify do útil seguindo os comandos abaixo.</p>
+    <pre>
+      <code class="js">const authController = require('./controllers/authController');
+const dashboardController = require('./controllers/dashboardController');
+
+// catch 404
+routes.use((req, res) => res.render('errors/404'));
+
+// error handler
+routes.use((err, req, res, _next) => {
+  res.status(err.status || 500);
+
+  return res.render('errors/index', {
+    message: err.message,
+    error: req.app.get('env') === 'development' ? err : {},
+  });
+});</code>
+    </pre>
+  </div>
+</section>

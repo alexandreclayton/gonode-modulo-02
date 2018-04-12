@@ -8,21 +8,17 @@
     <strong>CATEGORIAS</strong>
 
     <ul>
-      <li class="active">
-        <a href="/app/categories/show/1">
-          NodeJS
-          <span>3</span>
-        </a>
-      </li>
-      <li>
-        <a href="/app/categories/show/2">
-          ReactJS
-          <span>10</span>
-        </a>
-      </li>
+      {{#each categories}}
+        <li>
+          <a href="/app/categories/{{this.id}}">
+            {{this.title}}
+            <span>{{this.Snippets.length}}</span>
+          </a>
+        </li>
+      {{/each}}
     </ul>
 
-    <a href="">NOVA CATEGORIA</a>
+    <a href="/app/categories/create">NOVA CATEGORIA</a>
   </div>
 </nav>
 

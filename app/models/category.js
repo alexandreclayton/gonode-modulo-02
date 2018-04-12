@@ -3,5 +3,10 @@ module.exports = (sequelize, DataTypes) => {
     title: DataTypes.STRING,
   });
 
+  Category.associate = (models) => {
+    Category.belongsTo(models.User);
+    Category.hasMany(models.Snippet);
+  };
+
   return Category;
 };

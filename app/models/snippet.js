@@ -4,5 +4,9 @@ module.exports = (sequelize, DataTypes) => {
     content: DataTypes.TEXT,
   });
 
+  Snippet.associate = (models) => {
+    Snippet.belongsTo(models.Category);
+  };
+
   return Snippet;
 };

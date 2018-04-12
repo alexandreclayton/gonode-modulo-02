@@ -18,6 +18,14 @@ body {
   -webkit-font-smoothing: antialiased !important;
 }
 
+button {
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+input:focus, textarea:focus {
+  outline: 0;
+}
+
 .auth-wrapper {
   height: 100%;
   display: flex;
@@ -50,10 +58,6 @@ body {
   margin: 0 0 15px;
   border-radius: 8px;
   border: 1px solid #DDD;
-}
-
-.auth-wrapper form input:focus {
-  outline: 0;
 }
 
 .auth-wrapper form button {
@@ -287,12 +291,12 @@ body {
 }
 
 .wrapper .snippet-content .content p {
-  margin: 0 0 10px;
+  margin: 0 0 20px;
   line-height: 24px;
 }
 
 .wrapper .snippet-content .content ul {
-  margin: 0 0 10px 20px;
+  margin: 0 0 20px 20px;
 }
 
 .wrapper .snippet-content .content ul li {
@@ -305,5 +309,70 @@ body {
   font-size: 14px;
   line-height: 24px;
   padding: 20px;
+  margin: 0 0 20px;
+}
+
+.modal {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  max-width: 700px;
+  width: 100%;
+  height: 100%;
+  background: #FFF;
+  padding: 30px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.modal-content input,
+.modal-content textarea {
+  border: 1px solid #DDD;
+  padding: 20px;
   margin: 0 0 10px;
+  font-size: 16px;
+  border-radius: 3px;
+}
+
+.modal-content .content-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin: 0 0 15px;
+}
+
+.modal-content .content-container .CodeMirror {
+  flex: 1;
+}
+
+.modal-content button {
+  height: 50px;
+  line-height: 50px;
+  display: block;
+  border-radius: 3px;
+  background: #0AC699;
+  color: #FFF;
+  text-decoration: none;
+  text-align: center;
+  font-weight: bold;
+  font-size: 16px;
+  transition: all .2s;
+  border: 0;
+}
+
+.modal-content button:hover {
+  background: #0BAB85;
 }

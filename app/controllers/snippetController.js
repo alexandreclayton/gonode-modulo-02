@@ -20,7 +20,7 @@ module.exports = {
         categoryId,
         categories,
         snippets,
-        snippet,
+        currentSnippet: snippet,
       });
     } catch (err) {
       next(err);

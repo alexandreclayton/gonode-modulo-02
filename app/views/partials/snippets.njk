@@ -1,11 +1,33 @@
 <section class="snippets-list">
   <div class="list-header">
-    <a href="/app/snippets/new/{{categoryId}}" class="new">NOVO SNIPPET</a>
+    <a href="/app/snippets/new/{{ categoryId }}" class="new">NOVO SNIPPET</a>
   </div>
   {% for snippet in snippets %}
-    <a class="{% if snippet.CategoryId == categoryId %}active{% endif %}" href="/app/categories/{{ categoryId }}/snippets/{{ snippet.id }}">
+    <a class="{% if currentSnippet and currentSnippet.id == snippet.id %}active{% endif %}" href="/app/categories/{{ categoryId }}/snippets/{{ snippet.id }}">
       <strong>{{ snippet.title }}</strong>
       <p>{{ snippet.excerpt }}</p>
     </a>
   {% endfor %}
 </section>
+
+<div class="modal new-snippet">
+  <form action="/app/snippets/create" method="POST" class="modal-content">
+    <input type="hidden" name="CategoryId" value="{{ categoryId }}" />
+
+    <input type="text" name="title" placeholder="Título do snippet" />
+
+    <div class="content-container">
+      <textarea name="content" id="snippet-content" placeholder="Conteúdo do snippet"></textarea>
+    </div>
+
+    <script type="text/javascript">
+      var simplemde = new SimpleMDE({
+        element: document.getElementById("snippet-content"),
+        spellChecker: false,
+        status: false,
+      });
+    </script>
+
+    <button type="submit">SALVAR SNIPPET</button>
+  </form>
+</div>

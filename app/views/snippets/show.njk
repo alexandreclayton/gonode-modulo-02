@@ -13,7 +13,7 @@
     </div>
 
     <h1>{{ snippet.title }}</h1>
-    <div class="content">{{ snippet.content }}</div>
+    <div class="content">{{ snippet.formattedContent | safe }}</div>
   </section>
 
 {% endblock %}

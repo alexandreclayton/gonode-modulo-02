@@ -299,13 +299,11 @@ body {
   line-height: 24px;
 }
 
-.wrapper .snippet-content .content pre {
+.wrapper .snippet-content .content .hljs {
   white-space: pre-wrap;
-}
-
-.wrapper .snippet-content .content code {
   border-radius: 3px;
   font-size: 14px;
   line-height: 24px;
   padding: 20px;
+  margin: 0 0 10px;
 }

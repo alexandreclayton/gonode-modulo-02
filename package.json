@@ -11,8 +11,8 @@
     "eslint": "^4.19.1",
     "express": "^4.16.3",
     "express-session": "^1.15.6",
-    "hbs": "^4.0.1",
     "mysql2": "^1.5.3",
+    "nunjucks": "^3.1.2",
     "sequelize": "^4.37.5",
     "session-file-store": "^1.2.0"
   },

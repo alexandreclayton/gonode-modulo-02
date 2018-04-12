@@ -1,0 +1,11 @@
+<section class="snippets-list">
+  <div class="list-header">
+    <a href="/app/snippets/new/{{categoryId}}" class="new">NOVO SNIPPET</a>
+  </div>
+  {% for snippet in snippets %}
+    <a href="/app/snippets/show/{{snippet.id}}">
+      <strong>{{snippet.title}}</strong>
+      <p>{{snippet.excerpt}}</p>
+    </a>
+  {% endfor %}
+</section>

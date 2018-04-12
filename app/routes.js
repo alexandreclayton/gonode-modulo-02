@@ -7,6 +7,7 @@ const guestMiddleware = require('./middlewares/guest');
 
 const authController = require('./controllers/authController');
 const dashboardController = require('./controllers/dashboardController');
+const categoryController = require('./controllers/categoryController');
 
 // set locals
 routes.use((req, res, next) => {
@@ -31,6 +32,11 @@ routes.post('/authenticate', authController.authenticate);
  */
 routes.use('/app', authMiddleware);
 routes.get('/app/dashboard', dashboardController.index);
+
+/**
+ * Categories
+ */
+routes.get('/app/categories/:id', categoryController.show);
 
 // catch 404
 routes.use((req, res) => res.render('errors/404'));

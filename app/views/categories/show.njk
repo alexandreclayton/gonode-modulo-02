@@ -1,0 +1,62 @@
+{% extends "layouts/default.njk" %}
+
+{% block body %}
+  {% include "partials/nav.njk" %}
+  {% include "partials/snippets.njk" %}
+
+  <section class="snippet-content">
+    <div class="actions">
+      <a href="/app/snippets/edit/1" class="edit">Editar</a>
+      <form action="/app/snippets/delete/1" method="post">
+        <button type="submit">Remover</button>
+      </form>
+    </div>
+
+    <h1>Async/await no controller do ExpressJS</h1>
+
+    <div class="content">
+      <p>Quando precisar trocar um callback para Promise basta utilizar o Promisify do útil seguindo os comandos abaixo.</p>
+      <pre>
+        <code class="js">const authController = require('./controllers/authController');
+  const dashboardController = require('./controllers/dashboardController');
+
+  // catch 404
+  routes.use((req, res) => res.render('errors/404'));
+
+  // error handler
+  routes.use((err, req, res, _next) => {
+    res.status(err.status || 500);
+
+    return res.render('errors/index', {
+      message: err.message,
+      error: req.app.get('env') === 'development' ? err : {},
+    });
+  });</code>
+      </pre>
+      <p>Quando precisar trocar um callback para Promise basta utilizar o Promisify do útil seguindo os comandos abaixo.</p>
+      <ul>
+        <li>Tesete</li>
+        <li>adasdasd</li>
+      </ul>
+      <p>Quando precisar trocar um callback para Promise basta utilizar o Promisify do útil seguindo os comandos abaixo.</p>
+      <pre>
+        <code class="js">const authController = require('./controllers/authController');
+  const dashboardController = require('./controllers/dashboardController');
+
+  // catch 404
+  routes.use((req, res) => res.render('errors/404'));
+
+  // error handler
+  routes.use((err, req, res, _next) => {
+    res.status(err.status || 500);
+
+    return res.render('errors/index', {
+      message: err.message,
+      error: req.app.get('env') === 'development' ? err : {},
+    });
+  });</code>
+      </pre>
+    </div>
+  </section>
+
+{% endblock %}

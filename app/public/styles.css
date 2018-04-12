@@ -193,6 +193,11 @@ body {
   font-weight: bold;
   font-size: 16px;
   margin: 20px 30px 0;
+  transition: all .2s;
+}
+
+.wrapper nav#main .categories > a:hover {
+  background: #3293CF;
 }
 
 .wrapper .snippets-list .list-header {
@@ -211,6 +216,11 @@ body {
   text-align: center;
   font-weight: bold;
   font-size: 16px;
+  transition: all .2s;
+}
+
+.wrapper .snippets-list .list-header a:hover {
+  background: #0BAB85;
 }
 
 .wrapper .snippets-list > a {

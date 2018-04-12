@@ -6,16 +6,19 @@ const routes = require('./app/routes');
 const path = require('path');
 const session = require('express-session');
 const flash = require('connect-flash');
-const hbs = require('hbs');
+const nunjucks = require('nunjucks');
 const sessionConfig = require('./config/session');
 
 const app = express();
 
-app.use(express.static(path.join(__dirname, 'app', 'public')));
-app.set('views', path.join(__dirname, 'app', 'views'));
-app.set('view engine', 'hbs');
+app.use(express.static(path.join('app', 'public')));
 
-hbs.registerPartials(path.join(__dirname, 'app', 'views', 'partials'));
+nunjucks.configure(path.join('app', 'views'), {
+  autoescape: true,
+  express: app,
+});
+
+app.set('view engine', 'njk');
 
 app.use(session(sessionConfig));
 app.use(flash());

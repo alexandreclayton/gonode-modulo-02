@@ -1,14 +1,13 @@
 const { User } = require('../models');
 const bcrypt = require('bcryptjs');
-const { promisify } = require('util');
 
 module.exports = {
   signin(req, res) {
-    return res.render('auth/signin', { layout: 'layouts/auth' });
+    return res.render('auth/signin');
   },
 
   signup(req, res) {
-    return res.render('auth/signup', { layout: 'layouts/auth' });
+    return res.render('auth/signup');
   },
 
   async register(req, res, next) {

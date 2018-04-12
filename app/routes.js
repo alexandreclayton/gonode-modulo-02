@@ -8,6 +8,7 @@ const guestMiddleware = require('./middlewares/guest');
 const authController = require('./controllers/authController');
 const dashboardController = require('./controllers/dashboardController');
 const categoryController = require('./controllers/categoryController');
+const snippetController = require('./controllers/snippetController');
 
 // set locals
 routes.use((req, res, next) => {
@@ -37,6 +38,11 @@ routes.get('/app/dashboard', dashboardController.index);
  * Categories
  */
 routes.get('/app/categories/:id', categoryController.show);
+
+/**
+ * Snippets
+ */
+routes.get('/app/categories/:categoryId/snippets/:id', snippetController.show);
 
 // catch 404
 routes.use((req, res) => res.render('errors/404'));

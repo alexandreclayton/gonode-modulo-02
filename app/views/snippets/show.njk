@@ -7,7 +7,9 @@
   <section class="snippet-content">
     <div class="actions">
       <a href="/app/snippets/edit/{{ currentSnippet.id }}" class="edit">Editar</a>
-      <form action="/app/snippets/delete/{{ currentSnippet.id }}" method="post">
+
+      <form action="/app/snippets/delete/{{ currentSnippet.id }}?_method=DELETE" method="post">
+        <input type="hidden" name="CategoryId" value="{{ categoryId }}">
         <button type="submit">Remover</button>
       </form>
     </div>

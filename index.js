@@ -8,6 +8,7 @@ const session = require('express-session');
 const flash = require('connect-flash');
 const nunjucks = require('nunjucks');
 const sessionConfig = require('./config/session');
+const methodOverride = require('method-override');
 
 const app = express();
 
@@ -24,6 +25,7 @@ app.use(session(sessionConfig));
 app.use(flash());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(methodOverride('_method'));
 
 // Routes
 app.use('/', routes);

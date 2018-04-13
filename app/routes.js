@@ -43,6 +43,8 @@ routes.get('/app/categories/:id', categoryController.show);
  * Snippets
  */
 routes.get('/app/categories/:categoryId/snippets/:id', snippetController.show);
+routes.post('/app/snippets/create', snippetController.store);
+routes.delete('/app/snippets/delete/:id', snippetController.destroy);
 
 // catch 404
 routes.use((req, res) => res.render('errors/404'));

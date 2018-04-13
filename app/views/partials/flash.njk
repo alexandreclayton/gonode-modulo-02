@@ -5,12 +5,3 @@
 {% for message in flashError %}
   <div class="alert alert-danger" role="alert">{{ message }}</div>
 {% endfor %}
-
-<script type="text/javascript">
-  setTimeout(function() {
-    var alert = document.querySelector('.alert');
-
-    if (alert)
-      alert.className += ' alert-hidden';
-  }, 3000);
-</script>

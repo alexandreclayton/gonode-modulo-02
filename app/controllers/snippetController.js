@@ -39,6 +39,20 @@ module.exports = {
     }
   },
 
+  async update(req, res, next) {
+    try {
+      const snippet = await Snippet.findById(req.params.id);
+
+      await snippet.update(req.body);
+
+      req.flash('success', 'Snippet atualizado com sucesso');
+
+      res.redirect(`/app/categories/${snippet.CategoryId}/snippets/${snippet.id}`);
+    } catch (err) {
+      next(err);
+    }
+  },
+
   async destroy(req, res, next) {
     try {
       const { id } = req.params;

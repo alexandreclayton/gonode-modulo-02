@@ -1,6 +1,6 @@
 <section class="snippets-list">
   <div class="list-header">
-    <a href="/app/snippets/new/{{ categoryId }}" class="new">NOVO SNIPPET</a>
+    <a href="#" data-modal-open="#new-snippet">NOVO SNIPPET</a>
   </div>
   {% for snippet in snippets %}
     <a class="{% if currentSnippet and currentSnippet.id == snippet.id %}active{% endif %}" href="/app/categories/{{ categoryId }}/snippets/{{ snippet.id }}">
@@ -10,47 +10,17 @@
   {% endfor %}
 </section>
 
-<div class="modal new-snippet">
+<div class="modal" id="new-snippet">
   <form action="/app/snippets/create" method="POST" class="modal-content">
     <input type="hidden" name="CategoryId" value="{{ categoryId }}" />
 
     <input type="text" name="title" placeholder="Título do snippet" />
 
     <div class="content-container">
-      <textarea name="content" id="snippet-content" placeholder="Conteúdo do snippet"></textarea>
+      <textarea name="content" class="mde" placeholder="Conteúdo do snippet"></textarea>
     </div>
 
     <button type="submit">SALVAR SNIPPET</button>
-    <a href="" class="close">CANCELAR</a>
+    <a href="#" data-modal-close="#new-snippet">CANCELAR</a>
   </form>
 </div>
-
-<script type="text/javascript">
-  var simplemde = new SimpleMDE({
-    element: document.getElementById("snippet-content"),
-    spellChecker: false,
-    status: false,
-  });
-
-  var newLink = document.querySelector('.new');
-  var closeLink = document.querySelector('.close');
-
-  newLink.onclick = function(event) {
-    event.preventDefault();
-
-    document.querySelector('.new-snippet').classList.add('active');
-  };
-
-  closeLink.onclick = function(event) {
-    event.preventDefault();
-
-    document.querySelector('.new-snippet').classList.remove('active');
-  };
-
-  document.onkeydown = function(evt) {
-    evt = evt || window.event;
-    if (evt.keyCode == 27) {
-      document.querySelector('.new-snippet').classList.remove('active');
-    }
-  };
-</script>

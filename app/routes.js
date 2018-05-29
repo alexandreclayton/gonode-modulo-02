@@ -38,6 +38,7 @@ routes.get('/app/dashboard', dashboardController.index);
  * Categories
  */
 routes.get('/app/categories/:id', categoryController.show);
+routes.post('/app/categories/create', categoryController.store);
 
 /**
  * Snippets
